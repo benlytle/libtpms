@@ -62,47 +62,32 @@
 #ifndef VENDORSTRING_H
 #define VENDORSTRING_H
 
-/* Define up to 4-byte values for MANUFACTURER.  This value defines the response for
-   TPM_PT_MANUFACTURER in TPM2_GetCapability(). The following line should be un-commented and a
-   vendor specific string should be provided here. */
-#define    MANUFACTURER    "IBM"
+/* Define up to 4-byte values for TPM2_MANUFACTURER. This value defines the response for
+   TPM_PT_MANUFACTURER in TPM2_GetCapability().
+   A vendor specific string should be provided here. */
+#define TPM2_MANUFACTURER    "IBM"
 
-/*     The following #if macro may be deleted after a proper MANUFACTURER is provided. */
-#ifndef MANUFACTURER
-#error MANUFACTURER is not provided.				 \
-    Please modify VendorString.h to provide a specific	  	 \
-    manufacturer name.
-#endif
+/* Vendor Id to match TPM2_MANUFACTURER. A vendor specific string should be provided here.
+   Official TCG Vendor IDs can be found here:
+   https://trustedcomputinggroup.org/wp-content/uploads/TCG-TPM-VendorIDRegistry-v1p06-r0p91-pub.pdf */
+#define TPM2_VENDOR_ID       (0x00001014)
 
-/*     Define up to 4, 4-byte, vendor-specific values. The values must each be 4 bytes long and the
-       last value used may contain trailing zeros. These values define the response for
-       TPM_PT_VENDOR_STRING_(1-4) in TPM2_GetCapability(). The following line should be un-commented
-       and a vendor specific string.  The vendor strings 2-4 may also be defined as appropriate. */
+/*  Define up to 4, 4-byte, vendor-specific values. The values must each be 4 bytes long and the
+    last value used may contain trailing zeros. These values define the response for
+    TPM_PT_VENDOR_STRING_(1-4) in TPM2_GetCapability(). A vendor specific string
+    should be provided here. The vendor strings 2-4 may also be defined as appropriate. */
 
-#define       VENDOR_STRING_1       "SW  "
-#define       VENDOR_STRING_2       " TPM"
-//#define       VENDOR_STRING_3
-//#define       VENDOR_STRING_4
-
-/*     The following #if macro may be deleted after a proper VENDOR_STRING_1 is provided. */
-#ifndef VENDOR_STRING_1
-#error VENDOR_STRING_1 is not provided.					\
-    Please modify VendorString.h to provide a vendor specific string.
-#endif
+#define VENDOR_STRING_1 "SW  "
+#define VENDOR_STRING_2 " TPM"
+//#define VENDOR_STRING_3
+//#define VENDOR_STRING_4
 
 /* the more significant 32-bits of a vendor-specific value indicating the version of the firmware
-   The following line should be un-commented and a vendor specific firmware V1 should be provided
-   here. The FIRMWARE_V2 may also be defined as appropriate. */
-#define   FIRMWARE_V1         (0x20191023)
+   A vendor specific firmware V1 should be provided here.
+   The FIRMWARE_V2 may also be defined as appropriate. */
+#define FIRMWARE_V1     (0x20191023)
 
 // the less significant 32-bits of a vendor-specific value indicating the version of the firmware
-#define   FIRMWARE_V2         (0x00163636)
-
-// The following #if macro may be deleted after a proper FIRMWARE_V1 is provided.
-#ifndef FIRMWARE_V1
-#error  FIRMWARE_V1 is not provided.					\
-    Please modify VendorString.h to provide a vendor specific firmware \
-    version
-#endif
+#define FIRMWARE_V2     (0x00163636)
 
 #endif

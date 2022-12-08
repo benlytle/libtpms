@@ -107,7 +107,7 @@ TPMPropertyIsDefined(
 	    break;
 	  case TPM_PT_MANUFACTURER:
 	    // vendor ID unique to each TPM manufacturer
-	    *value = BYTE_ARRAY_TO_UINT32(MANUFACTURER);
+	    *value = BYTE_ARRAY_TO_UINT32(TPM2_MANUFACTURER);
 	    break;
 	  case TPM_PT_VENDOR_STRING_1:
 	    // first four characters of the vendor ID string

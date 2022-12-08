@@ -422,8 +422,8 @@ TpmFailureMode(
 		    {
 		      case TPM_PT_MANUFACTURER:
 			// the vendor ID unique to each TPM manufacturer
-#ifdef  MANUFACTURER
-			pt = *(UINT32*)MANUFACTURER;
+#ifdef  TPM2_MANUFACTURER
+			pt = *(UINT32*)TPM2_MANUFACTURER;
 #else
 			pt = 0;
 #endif
