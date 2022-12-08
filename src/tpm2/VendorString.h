@@ -67,7 +67,7 @@
    A vendor specific string should be provided here. */
 #define TPM2_MANUFACTURER    "IBM"
 
-/* Vendor Id to match TPM2_MANUFACTURER. A vendor specific string should be provided here.
+/* Vendor Id to match TPM2_MANUFACTURER. A vendor specific value should be provided here.
    Official TCG Vendor IDs can be found here:
    https://trustedcomputinggroup.org/wp-content/uploads/TCG-TPM-VendorIDRegistry-v1p06-r0p91-pub.pdf */
 #define TPM2_VENDOR_ID       (0x00001014)
